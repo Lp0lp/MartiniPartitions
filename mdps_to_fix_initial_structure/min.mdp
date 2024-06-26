@@ -1,0 +1,29 @@
+define                   = -DFLEXIBLE
+
+integrator               = steep
+nsteps                   = 5000
+nstxtcout                = 1000
+nstxout                  = 0
+nstfout                  = 0
+nstlog                   = 100 
+
+cutoff-scheme            = Verlet
+nstlist                  = 20
+rlist                    = 1.35
+verlet-buffer-tolerance  = -1
+ns_type                  = grid
+pbc                      = xyz
+
+coulombtype              = reaction-field
+rcoulomb                 = 1.1
+epsilon_r                = 15 
+epsilon_rf               = 0 
+vdw_type                 = cutoff ;(for use with Verlet-pairlist)   
+vdw-modifier             = Potential-shift-verlet
+rvdw                     = 1.1 ;(for use with Verlet-pairlist)
+
+constraints              = none 
+constraint_algorithm     = Lincs
+lincs_order              = 12
+lincs_iter               = 4
+lincs_warnangle          = 90
